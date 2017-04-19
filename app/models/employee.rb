@@ -1,6 +1,9 @@
 class Employee < ActiveRecord::Base
   validates :name, presence: true, uniqueness: { case_sensitive: false }
 
+  ##
+  # Returns a randomized array of arrays, each array containing 3-5 employees' names
+
   def self.group
     # Get the names of all employees, shuffle them, and split them into groups of 3
     groups = Employee.all.map(&:name).shuffle.in_groups_of(3, false)
