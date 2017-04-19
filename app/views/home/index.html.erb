@@ -1,0 +1,19 @@
+<h1>Family Friday</h1>
+
+<table>
+  <thead>
+     <tr>
+        <th>Here's who to lunch with:</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @groups.each_with_index do |group, index| %>
+      <tr>
+        <td>Group <%= index + 1 %>: <%= group.join(', ') %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<a href='employees'>Add or Remove Employees</a>
