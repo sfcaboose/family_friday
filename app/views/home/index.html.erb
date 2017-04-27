@@ -1,19 +1,16 @@
 <h1>Family Friday</h1>
 
-<table>
-  <thead>
-     <tr>
-        <th>Here's who to lunch with:</th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @groups.each_with_index do |group, index| %>
-      <tr>
-        <td>Group <%= index + 1 %>: <%= group.join(', ') %></td>
-      </tr>
+    <%@groups.each do |location, groups| %>
+      <h2><%= location %></h2>
+      <ul>
+        <% groups.each_with_index do |group, index| %>
+          <h3>Group <%= index + 1 %></h3>
+          <% group.each do |name| %>
+            <li><%= name %></li>
+          <% end %>
+        <% end %>
+      </ul>
     <% end %>
-  </tbody>
-</table>
 
 <%= link_to 'Add or Remove Employees', employees_path %>

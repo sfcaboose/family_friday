@@ -1,0 +1,37 @@
+"Sidney Chan".split(' ')
+list of [first,last]
+
+hash = {}
+
+for each name in names
+  hash[first_name] push last_name
+end
+
+list_of_names = []
+
+for first_name, last_names in hash
+  if last_names.length == 1
+    list_of_names.push(first_name)
+  else
+    for i in 0...length_of_longest_last_name
+      rest_of_names = {}
+      for last_name in last_names
+        if reached the last character of last_name
+          list_of_names.push(first_name + last_name)
+          remove last name from last_names
+        else
+          rest_of_name[last_name[0..i]].push(last_name[i+1..-1])
+        end
+      end
+
+      for first_part_of_last_name, rest_of_last_names in hash
+        if rest_of_last_names.length == 1
+          list_of_names.push(first_name + first_part_of_last_name)
+          remove last name from last_names
+        end
+      end
+
+
+    end
+  end
+end

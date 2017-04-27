@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170420190701) do
+ActiveRecord::Schema.define(version: 20170427190828) do
 
   create_table "employees", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
     t.boolean  "active",     default: true
+    t.string   "location",   default: "San Francisco"
   end
 
 end

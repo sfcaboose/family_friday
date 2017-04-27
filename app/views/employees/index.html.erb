@@ -8,6 +8,7 @@
       <th>ID</th>
       <th>Name</th>
       <th>Active?</th>
+      <th>Location</th>
     </tr>
   </thead>
 
@@ -17,6 +18,7 @@
         <td><%= employee.id %></td>
         <td><%= employee.name %></td>
         <td><%= employee.active %></td>
+        <td><%= employee.location %></td>
         <td><%= link_to 'Show', employee %></td>
         <td><%= link_to 'Toggle Active', toggle_active_employee_path(employee), method: :patch %></td>
         <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
