@@ -2,6 +2,12 @@
 
 one:
   name: Employee 1
+  active: true
 
 two:
   name: Employee 2
+  active: true
+
+three:
+  name: Employee 3
+  active: true

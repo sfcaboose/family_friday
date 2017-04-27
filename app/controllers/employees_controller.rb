@@ -1,5 +1,5 @@
 class EmployeesController < ApplicationController
-  before_action :set_employee, only: [:show, :edit, :update, :destroy]
+  before_action :set_employee, only: [:show, :toggle_active, :edit, :update, :destroy]
 
   # GET /employees
   # GET /employees.json
@@ -19,6 +19,18 @@ class EmployeesController < ApplicationController
 
   # GET /employees/1/edit
   def edit
+  end
+
+  def toggle_active
+    respond_to do |format|
+      if @employee.update_attributes(active: !@employee.active)
+        format.html { redirect_to @employee, notice: 'Employee was successfully switched.' }
+        format.json { render :show, status: :ok, location: @employee }
+      else
+        format.html { render :new }
+        format.json { render json: @employee.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # POST /employees
